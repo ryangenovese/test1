@@ -1,0 +1,19 @@
+<% @devneeds.each do |devneed| %>
+  <div class="linkrow clearfix">
+    <h2>
+      <%= link_to devneed.title, devneed %>
+    </h2>
+    <div class="btn">
+		<%= link_to like_devneed_path(devneed), method: :put, class: "btn btn-default" do %>
+			<image src="assets/thumbs-up-icon.png" height="20" width="20"> 
+			<%= devneed.get_upvotes.size %>
+		<% end %>
+		<%= link_to dislike_devneed_path(devneed), method: :put, class: "btn btn-default" do %>
+			<image src="assets/thumbs-down-icon.png" height="20" width="20">
+			<%= devneed.get_downvotes.size %>
+		<% end %>
+	</div>
+  </div>
+<% end -%>
+      
+

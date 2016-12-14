@@ -1,0 +1,26 @@
+
+<div class="page-header">
+	<h1><%= @devneed.title %><br>
+	<small><%= @devneed.description %></small>
+	</h1>
+</div>
+
+<div class="btn-group">
+	<%= link_to 'Edit', edit_devneed_path(@devneed), class: "btn btn-default" %>
+	<%= link_to 'Destroy', devneed_path(@devneed), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
+
+<h3 class="comments_title">
+	<%= @devneed.comments.count %> Comments
+</h3>
+
+<div id="comments">
+	<%= render :partial => @devneed.comments %>
+</div>
+<%= simple_form_for [@devneed, Comment.new] do |f| %>
+	<div class="field">
+		<%= f.text_area :body, class: "form-control" %>
+	</div>
+	<br>
+	<%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>

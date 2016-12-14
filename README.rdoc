@@ -1,0 +1,5 @@
+== README
+
+Lite idea formalization community for THD Dev
+
+Users login and add/delete ideas that other users can upvote or downvote. They will be prioritized by the Dev community and pushed into dev tools backlog based on value to the community. 
